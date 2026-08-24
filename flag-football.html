@@ -26,12 +26,11 @@
   <div class="wrap">
     <a href="#how-it-works">How It Works</a>
     <a href="#field">The Field</a>
-    <a href="#positions">Positions</a>
+    <a href="#positions">Positions &amp; Formations</a>
     <a href="#scoring">Scoring</a>
     <a href="#downs">Downs</a>
     <a href="#clock">5-Sec Clock</a>
     <a href="#touching">Touching &amp; Turnovers</a>
-    <a href="#formations">Formations</a>
   </div>
 </nav>
 
@@ -74,43 +73,63 @@
     <h2 class="section-title">The Field &amp; How a Drive Works</h2>
     <p class="lede">Every possession starts at the 40-yard line. From there, the offense drives toward the goal line, picking up new first downs along the way.</p>
 
-    <div class="diagram-wrap">
-      <svg viewBox="0 0 760 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of a drive from the 40-yard line to the goal line, showing the 30, 20, and 10 yard lines and a 3-yard PAT line near the goal.">
-        <rect x="20" y="30" width="660" height="160" style="fill:var(--turf-green)"/>
-        <rect x="20" y="30" width="165" height="160" style="fill:var(--turf-green-dark)" opacity="0.35"/>
-        <rect x="350" y="30" width="165" height="160" style="fill:var(--turf-green-dark)" opacity="0.35"/>
-        <rect x="680" y="30" width="40" height="160" style="fill:var(--rebel-blue)" opacity="0.9"/>
-        <text x="700" y="115" text-anchor="middle" transform="rotate(-90 700 115)" style="fill:#fff;font-family:var(--font-eyebrow);font-size:12px;letter-spacing:2px;">END ZONE</text>
+    <div class="diagram-wrap" style="max-width:640px; margin-left:auto; margin-right:auto;">
+      <svg viewBox="0 0 700 680" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vertical diagram of the field, running from the 50-yard line at the bottom, up through the 40-yard start line, the 30, 20, and 10 yard lines, the goal line, a 3-yard PAT line, and the end zone at the top.">
 
-        <g style="stroke:var(--turf-line);stroke-width:2">
-          <line x1="20" y1="30" x2="20" y2="190"/>
-          <line x1="185" y1="30" x2="185" y2="190"/>
-          <line x1="350" y1="30" x2="350" y2="190"/>
-          <line x1="515" y1="30" x2="515" y2="190"/>
-          <line x1="680" y1="30" x2="680" y2="190"/>
-        </g>
+          <!-- turf bands, alternating every 10 yards -->
+          <rect x="90" y="120" width="480" height="500" style="fill:var(--turf-green)"/>
+          <rect x="90" y="220" width="480" height="100" style="fill:var(--turf-green-dark)" opacity="0.28"/>
+          <rect x="90" y="420" width="480" height="100" style="fill:var(--turf-green-dark)" opacity="0.28"/>
 
-        <g style="fill:var(--turf-number);font-family:var(--font-display);font-size:24px;">
-          <text x="20" y="24" text-anchor="middle">40</text>
-          <text x="185" y="24" text-anchor="middle">30</text>
-          <text x="350" y="24" text-anchor="middle">20</text>
-          <text x="515" y="24" text-anchor="middle">10</text>
-        </g>
+          <!-- end zone -->
+          <rect x="90" y="20" width="480" height="100" style="fill:var(--turf-green-dark)"/>
+          <text x="330" y="75" text-anchor="middle" style="fill:#fff;font-family:var(--font-eyebrow);font-weight:700;font-size:14px;letter-spacing:0.22em;">END ZONE</text>
 
-        <line x1="630.5" y1="30" x2="630.5" y2="190" style="stroke:var(--rebel-red);stroke-width:3;stroke-dasharray:6 5"/>
-        <text x="630.5" y="204" text-anchor="middle" style="fill:var(--rebel-red);font-family:var(--font-eyebrow);font-weight:700;font-size:11px;letter-spacing:0.04em;">PAT LINE · 3 YD</text>
+          <!-- field border -->
+          <rect x="90" y="20" width="480" height="600" style="fill:none;stroke:#fff;stroke-width:2"/>
 
-        <circle cx="20" cy="110" r="9" style="fill:var(--rebel-red);stroke:#fff;stroke-width:2"/>
-        <text x="20" y="145" text-anchor="middle" style="fill:#fff;font-family:var(--font-eyebrow);font-weight:700;font-size:11px;">START</text>
+          <!-- yard lines -->
+          <g style="stroke:var(--turf-line);stroke-width:2">
+            <line x1="90" y1="120" x2="570" y2="120"/>
+            <line x1="90" y1="220" x2="570" y2="220"/>
+            <line x1="90" y1="320" x2="570" y2="320"/>
+            <line x1="90" y1="420" x2="570" y2="420"/>
+            <line x1="90" y1="520" x2="570" y2="520"/>
+          </g>
+          <!-- goal line, heavier -->
+          <line x1="90" y1="120" x2="570" y2="120" style="stroke:#fff;stroke-width:4"/>
 
-        <line x1="55" y1="205" x2="600" y2="205" style="stroke:#fff;stroke-width:2" marker-end="url(#arrowhead)"/>
-        <text x="330" y="216" text-anchor="middle" style="fill:#fff;font-family:var(--font-eyebrow);font-size:10px;letter-spacing:0.05em;">DIRECTION OF THE DRIVE</text>
+          <!-- yard numbers, left margin -->
+          <g style="fill:var(--rebel-blue);font-family:var(--font-display);font-size:20px;" text-anchor="end">
+            <text x="78" y="127">GOAL</text>
+            <text x="78" y="227">10</text>
+            <text x="78" y="327">20</text>
+            <text x="78" y="427">30</text>
+            <text x="78" y="527">40</text>
+            <text x="78" y="627">50</text>
+          </g>
 
-        <defs>
-          <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-            <path d="M0,0 L10,5 L0,10 z" style="fill:#fff"/>
-          </marker>
-        </defs>
+          <!-- 5-yard hash ticks, left edge -->
+          <g style="stroke:var(--rebel-blue); stroke-width:2; opacity:0.55">
+            <line x1="82" y1="170" x2="90" y2="170"/>
+            <line x1="82" y1="270" x2="90" y2="270"/>
+            <line x1="82" y1="370" x2="90" y2="370"/>
+            <line x1="82" y1="470" x2="90" y2="470"/>
+            <line x1="82" y1="570" x2="90" y2="570"/>
+          </g>
+
+          <!-- PAT line, 3 yards from goal -->
+          <line x1="90" y1="150" x2="570" y2="150" style="stroke:var(--rebel-red);stroke-width:3;stroke-dasharray:6 5"/>
+          <text x="580" y="146" style="fill:var(--rebel-red);font-family:var(--font-eyebrow);font-weight:700;font-size:12px;letter-spacing:0.03em;">PAT LINE</text>
+          <text x="580" y="160" style="fill:var(--rebel-red);font-family:var(--font-eyebrow);font-size:10px;letter-spacing:0.03em;">3 YD FROM GOAL</text>
+
+          <!-- start marker, 40-yard line -->
+          <circle cx="330" cy="520" r="8" style="fill:var(--rebel-red);stroke:#fff;stroke-width:2"/>
+          <line x1="570" y1="520" x2="578" y2="520" style="stroke:var(--rebel-red);stroke-width:2"/>
+          <text x="580" y="516" style="fill:var(--rebel-red);font-family:var(--font-eyebrow);font-weight:700;font-size:13px;letter-spacing:0.04em;">START</text>
+          <text x="580" y="530" style="fill:var(--rebel-red);font-family:var(--font-eyebrow);font-size:9.5px;letter-spacing:0.02em;">EVERY POSSESSION</text>
+
+          <text x="330" y="655" text-anchor="middle" style="fill:var(--steel-gray);font-family:var(--font-eyebrow);font-size:11px;letter-spacing:0.06em;">↑ DRIVE MOVES TOWARD THE GOAL LINE</text>
       </svg>
       <p class="diagram-caption">Each possession starts at the 40 &middot; crossing every 10-yard line earns a new first down &middot; PATs snap from the 3-yard line</p>
     </div>
@@ -121,32 +140,48 @@
   </div>
 </section>
 
-<!-- ================= POSITIONS ================= -->
+<!-- ================= POSITIONS & FORMATIONS ================= -->
 <section id="positions">
   <div class="wrap">
     <div class="yard-marker"><span class="flag">3rd &amp; 10</span><span class="rule"></span></div>
-    <h2 class="section-title">Positions</h2>
+    <h2 class="section-title">Positions &amp; Formations</h2>
     <p class="lede">Every legal formation needs a center and four receivers. Here's one example lineup — hover or tap a player to see their job.</p>
 
     <div class="diagram-wrap position-diagram-wrap" style="position:relative;">
-      <svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of an example offensive formation with a center, quarterback, running back, and four receivers labeled W, X, Y, and Z.">
+      <svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of an example offensive formation with a center, quarterback, running back, and four wide receivers.">
         <rect x="20" y="20" width="720" height="220" style="fill:var(--turf-green)"/>
-        <g style="stroke:#fff;stroke-width:1;opacity:0.2">
-          <line x1="200" y1="20" x2="200" y2="240"/>
-          <line x1="380" y1="20" x2="380" y2="240"/>
-          <line x1="560" y1="20" x2="560" y2="240"/>
+        <rect x="140" y="20" width="120" height="220" style="fill:var(--turf-green-dark)" opacity="0.28"/>
+        <rect x="380" y="20" width="120" height="220" style="fill:var(--turf-green-dark)" opacity="0.28"/>
+        <rect x="620" y="20" width="120" height="220" style="fill:var(--turf-green-dark)" opacity="0.28"/>
+
+        <g style="stroke:#fff; stroke-width:2; opacity:0.5">
+          <line x1="80" y1="20" x2="80" y2="30"/>
+          <line x1="200" y1="20" x2="200" y2="30"/>
+          <line x1="320" y1="20" x2="320" y2="30"/>
+          <line x1="440" y1="20" x2="440" y2="30"/>
+          <line x1="560" y1="20" x2="560" y2="30"/>
+          <line x1="680" y1="20" x2="680" y2="30"/>
+          <line x1="80" y1="230" x2="80" y2="240"/>
+          <line x1="200" y1="230" x2="200" y2="240"/>
+          <line x1="320" y1="230" x2="320" y2="240"/>
+          <line x1="440" y1="230" x2="440" y2="240"/>
+          <line x1="560" y1="230" x2="560" y2="240"/>
+          <line x1="680" y1="230" x2="680" y2="240"/>
         </g>
+
+        <rect x="20" y="20" width="720" height="220" style="fill:none;stroke:#fff;stroke-width:2"/>
+
         <line x1="60" y1="150" x2="700" y2="150" style="stroke:#fff;stroke-width:3"/>
         <text x="60" y="140" style="fill:#fff;font-family:var(--font-eyebrow);font-size:11px;letter-spacing:0.05em;">LINE OF SCRIMMAGE</text>
 
-        <g class="field-hotspot" tabindex="0" data-title="W — Receiver" data-desc="One of four receivers on every play. Lines up on the line of scrimmage and runs a route to get open for a pass.">
+        <g class="field-hotspot" tabindex="0" data-title="WR — Wide Receiver" data-desc="One of four receivers on every play. Lines up near the line of scrimmage and runs a route to get open for a pass.">
           <circle cx="110" cy="150" r="24" style="fill:var(--rebel-blue);stroke:#fff;stroke-width:2"/>
-          <text x="110" y="157" text-anchor="middle" style="fill:#fff;font-family:var(--font-display);font-size:20px;">W</text>
+          <text x="110" y="156" text-anchor="middle" style="fill:#fff;font-family:var(--font-display);font-size:15px;">WR</text>
         </g>
 
-        <g class="field-hotspot" tabindex="0" data-title="X — Receiver" data-desc="One of four receivers on every play. Lines up just off the line of scrimmage and runs a route to get open for a pass.">
+        <g class="field-hotspot" tabindex="0" data-title="WR — Wide Receiver" data-desc="One of four receivers on every play. Lines up near the line of scrimmage and runs a route to get open for a pass.">
           <circle cx="250" cy="172" r="24" style="fill:var(--rebel-blue);stroke:#fff;stroke-width:2"/>
-          <text x="250" y="179" text-anchor="middle" style="fill:#fff;font-family:var(--font-display);font-size:20px;">X</text>
+          <text x="250" y="178" text-anchor="middle" style="fill:#fff;font-family:var(--font-display);font-size:15px;">WR</text>
         </g>
 
         <g class="field-hotspot" tabindex="0" data-title="C — Center" data-desc="Snaps the ball to the quarterback to start every play — either between the legs or tossed from a knee. The center is not allowed to catch a pass.">
@@ -154,17 +189,17 @@
           <text x="380" y="157" text-anchor="middle" style="fill:#fff;font-family:var(--font-display);font-size:20px;">C</text>
         </g>
 
-        <g class="field-hotspot" tabindex="0" data-title="Y — Receiver" data-desc="One of four receivers on every play. Lines up just off the line of scrimmage and runs a route to get open for a pass.">
+        <g class="field-hotspot" tabindex="0" data-title="WR — Wide Receiver" data-desc="One of four receivers on every play. Lines up near the line of scrimmage and runs a route to get open for a pass.">
           <circle cx="510" cy="172" r="24" style="fill:var(--rebel-blue);stroke:#fff;stroke-width:2"/>
-          <text x="510" y="179" text-anchor="middle" style="fill:#fff;font-family:var(--font-display);font-size:20px;">Y</text>
+          <text x="510" y="178" text-anchor="middle" style="fill:#fff;font-family:var(--font-display);font-size:15px;">WR</text>
         </g>
 
-        <g class="field-hotspot" tabindex="0" data-title="Z — Receiver" data-desc="One of four receivers on every play. Lines up on the line of scrimmage and runs a route to get open for a pass.">
+        <g class="field-hotspot" tabindex="0" data-title="WR — Wide Receiver" data-desc="One of four receivers on every play. Lines up near the line of scrimmage and runs a route to get open for a pass.">
           <circle cx="650" cy="150" r="24" style="fill:var(--rebel-blue);stroke:#fff;stroke-width:2"/>
-          <text x="650" y="157" text-anchor="middle" style="fill:#fff;font-family:var(--font-display);font-size:20px;">Z</text>
+          <text x="650" y="156" text-anchor="middle" style="fill:#fff;font-family:var(--font-display);font-size:15px;">WR</text>
         </g>
 
-        <g class="field-hotspot" tabindex="0" data-title="QB — Quarterback" data-desc="Lines up directly behind the center. Has 5 seconds to throw the ball on every play — there are no hand-offs or pitches.">
+        <g class="field-hotspot" tabindex="0" data-title="QB — Quarterback" data-desc="Lines up directly behind the center. Has 5 seconds to throw the ball on every play — every play is a forward pass, and the QB cannot run the ball.">
           <circle cx="380" cy="215" r="24" style="fill:var(--rebel-red);stroke:#fff;stroke-width:2"/>
           <text x="380" y="222" text-anchor="middle" style="fill:#fff;font-family:var(--font-display);font-size:18px;">QB</text>
         </g>
@@ -176,6 +211,12 @@
       </svg>
       <div id="position-tooltip" role="tooltip"></div>
       <p class="diagram-hint">Hover or tap a player</p>
+    </div>
+
+    <p class="lede" style="margin-top:22px;">All formations are legal, as long as every play includes a center on the line and four receivers. An illegal formation costs a loss of down.</p>
+
+    <div class="callout">
+      <strong>No hand-offs or pitches:</strong> every single play is a forward pass. The running back runs a pass route instead of taking a hand-off.
     </div>
   </div>
 </section>
@@ -264,19 +305,6 @@
       <div class="card">
         <p style="margin:0;"><strong>Interceptions are dead on the spot</strong> — the defense can't return them. An interception is worth 3 points on its own and then the offense that threw it gets the ball back.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FORMATIONS ================= -->
-<section class="alt" id="formations">
-  <div class="wrap">
-    <div class="yard-marker"><span class="flag">Formations</span><span class="rule"></span></div>
-    <h2 class="section-title">Formations</h2>
-    <p class="lede">All formations are legal, as long as every play includes a center on the line and four receivers. An illegal formation costs a loss of down.</p>
-
-    <div class="callout">
-      <strong>No hand-offs or pitches:</strong> every single play is a forward pass. The running back runs a pass route instead of taking a hand-off.
     </div>
   </div>
 </section>
