@@ -413,6 +413,20 @@ details.expand .body ul { margin: 0 0 12px; padding-left: 20px; }
   margin-top: 18px;
 }
 .diagram-wrap svg { width: 100%; height: auto; display: block; }
+
+/* Position/formation diagram has tap targets — never shrink it below a
+   comfortable touch size. Scrolls horizontally on narrow screens instead. */
+.position-diagram-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.position-diagram-wrap svg {
+  width: 640px;
+  max-width: none;
+}
+@media (min-width: 700px) {
+  .position-diagram-wrap svg { width: 100%; }
+}
 .diagram-caption {
   font-family: var(--font-eyebrow);
   text-transform: uppercase;
